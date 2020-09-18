@@ -1,0 +1,15 @@
+@import 'assets/styles/index.scss';
+
+.sms-code {
+    .main {
+        &__subheadline {
+            @extend %font--subheadline;
+
+            margin-bottom: 10px;
+
+            @include media('medium') {
+                margin-bottom: 5px;
+            }
+        }
+    }
+}

@@ -1,0 +1,58 @@
+@import 'assets/styles/index.scss';
+
+.personal-data {
+    .main {
+        &__headline {
+            @extend %font--headline;
+
+            display: none;
+
+            @include media('medium') {
+                display: block;
+                margin-bottom: 5px;
+            }
+        }
+
+        &__description {
+            display: none;
+
+            @include media('medium') {
+                display: block;
+                margin-bottom: 45px;
+            }
+        }
+
+        &__see-more {
+            @extend %font--accent;
+
+            &--headline {
+                @extend .main__see-more;
+
+                @include media('medium') {
+                    display: none;
+                }
+            }
+
+            &--description {
+                @extend .main__see-more;
+
+                display: none;
+
+                @include media('medium') {
+                    display: inline-block;
+                }
+            }
+        }
+
+        &__subheadline {
+            @extend %font--subheadline;
+
+            margin-bottom: 10px;
+
+            @include media('medium') {
+                padding-top: 15px;
+                margin-bottom: 0;
+            }
+        }
+    }
+}

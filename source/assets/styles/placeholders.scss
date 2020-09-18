@@ -1,0 +1,125 @@
+@import 'assets/styles/mixins.scss';
+
+%font--primary {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+}
+
+%font--secondary {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+}
+
+%font--headline {
+    @extend %font--secondary;
+    
+    font-size: 1.6rem;
+
+    @include media('very-small') {
+        font-size: 1.9rem;
+    }
+
+    @include media('small') {
+        font-size: 2rem;
+    }
+
+    @include media('medium') {
+        font-size: 1.9rem;
+    }
+
+    @include media('large') {
+        font-size: 2rem;
+    }
+
+    @include media('very-large') {
+        font-size: 2.2rem;
+    }
+}
+
+%font--subheadline {
+    @extend %font--secondary;
+
+    font-size: 1.2rem;
+}
+
+%font--annotation {
+    @include media('medium') {
+        font-size: .9rem;
+    }
+
+    @include media('large') {
+        font-size: .8rem;
+    }
+}
+
+%font--accent {
+    @extend %font--secondary;
+
+    color: $color--riptide;
+    text-decoration: underline;
+}
+
+%container,
+%container--mobile {
+    box-sizing: border-box;
+    width: 100%;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+@include media('very-small') {
+    %container,
+    %container--mobile {
+        width: 320px;
+        padding-right: 0;
+        padding-left: 0;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+@include media('small') {
+    %container,
+    %container--mobile {
+        width: 480px;
+    }
+}
+
+@include media('medium') {
+    %container {
+        width: 720px;
+    }
+
+    %container--mobile {
+        width: auto;
+    }
+
+    %container--desktop {
+        width: 720px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+@include media('large') {
+    %container,
+    %container--desktop {
+        width: 960px;
+    }
+}
+
+@include media('very-large') {
+    %container,
+    %container--desktop {
+        width: 1200px;
+    }
+}
+
+@include media('wide') {
+    %container,
+    %container--desktop {
+        width: 1440px;
+    }
+}

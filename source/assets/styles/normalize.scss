@@ -1,0 +1,139 @@
+@import 'assets/styles/placeholders.scss';
+
+a {
+    display: inline-block;
+    -webkit-tap-highlight-color: transparent;
+    color: inherit;
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+    background-color: $color--mirage;
+
+    @include media('medium') {
+        background-color: $color--ebony;
+    }
+}
+
+button {
+    display: block;
+    box-sizing: content-box;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    margin: 0;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    appearance: auto;
+    background-color: transparent;
+    color: inherit;
+    font: inherit;
+    line-height: inherit;
+    text-align: inherit;
+}
+
+button:focus {
+    outline: none;
+}
+
+dialog {
+    position: static;
+    display: none;
+    width: auto;
+    height: auto;
+    padding: 0;
+    border: none;
+    margin: 0;
+    background-color: transparent;
+    color: inherit;
+}
+
+dialog[open] {
+    display: block;
+}
+
+h1 {
+    margin: 0;
+    font: inherit;
+}
+
+h2 {
+    margin: 0;
+    font: inherit;
+}
+
+html {
+    @extend %font--primary;
+
+    color: $color--white;
+    font-size: 12px;
+    line-height: 1.2;
+
+    @include media('medium') {
+        font-size: 14px;
+    }
+
+    @include media('large') {
+        font-size: 16px;
+    }
+}
+
+img {
+    display: block;
+    color: inherit;
+}
+
+input {
+    display: block;
+    overflow: visible;
+    box-sizing: content-box;
+    width: auto;
+    height: auto;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    margin: 0;
+    cursor: inherit;
+    -webkit-tap-highlight-color: transparent;
+    appearance: auto;
+    background-color: transparent;
+    box-shadow: none;
+    color: inherit;
+    font: inherit;
+    line-height: inherit;
+    text-align: inherit;
+}
+
+input:focus {
+    outline: none;
+}
+
+label {
+    display: block;
+    -webkit-tap-highlight-color: transparent;
+}
+
+p {
+    margin: 0;
+}
+
+strong {
+    @extend %font--secondary;
+}
+
+table {
+    box-sizing: content-box;
+    border: none;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 0;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}

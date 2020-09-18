@@ -1,0 +1,12 @@
+@import 'assets/styles/index.scss';
+
+.confirmation {
+    .main {
+        &__subheadline {
+            @extend %font--subheadline;
+
+            margin-top: 35px;
+            margin-bottom: 30px;
+        }
+    }
+}

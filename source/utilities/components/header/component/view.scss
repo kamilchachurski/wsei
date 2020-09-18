@@ -1,0 +1,124 @@
+@import 'assets/styles/index.scss';
+
+.header {
+    flex-shrink: 0;
+
+    @include media('medium') {
+        box-sizing: border-box;
+        width: 300px;
+        padding: 50px 20px;
+    }
+
+    @include media('large') {
+        width: 400px;
+        padding: 50px;
+    }
+
+    @include media('very-large') {
+        width: 550px;
+        padding: 50px 75px;
+    }
+
+    @include media('wide') {
+        width: 600px;
+        padding: 50px 100px;
+    }
+
+    &__container {
+        @extend %container--mobile;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-top: 15px;
+        margin-bottom: 10px;
+
+        @include media('medium') {
+            flex-direction: column;
+            align-items: flex-start;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    }
+
+    &__name {
+        @extend %font--headline;
+
+        @include media('medium') {
+            margin-left: 0;
+        }
+    }
+
+    &__transaction {
+        @include media('medium') {
+            margin-bottom: 40px;
+        }
+    }
+
+    &__details {
+        background-color: $color--ebony;
+        text-align: right;
+
+        @include media('medium') {
+            background-color: transparent;
+            line-height: 1.6;
+            text-align: left;
+        }
+    }
+
+    &__container {
+        @extend %container--mobile;
+
+        padding-top: 15px;
+        padding-bottom: 15px;
+
+        @include media('medium') {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    }
+
+    &__price {
+        @extend %font--headline;
+
+        margin-left: 15px;
+
+        @include media('medium') {
+            margin-bottom: 40px;
+            margin-left: 0;
+        }
+    }
+
+    &__principles {
+        display: none;
+
+        @include media('medium') {
+            display: block;
+        }
+    }
+
+    &__toggle {
+        @extend %font--accent;
+
+        margin-left: auto;
+
+        @include media('medium') {
+            margin-left: 0;
+        }
+
+        &::before {
+            content: url('../../../../assets/images/arrow.svg');
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            margin-right: 5px;
+            vertical-align: middle;
+
+            @include media('medium') {
+                width: 25px;
+                height: 25px;
+                margin-right: 20px;
+            }
+        }
+    }
+}

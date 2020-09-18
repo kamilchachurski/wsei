@@ -1,0 +1,33 @@
+@import 'assets/styles/index.scss';
+
+.headline {
+    @extend %font--headline;
+
+    position: relative;
+    max-width: 355px;
+    transform-style: preserve-3d;
+
+    @include media('medium') {
+        max-width: none;
+    }
+
+    &--underlined {
+        @extend .headline;
+
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            display: block;
+            width: 40%;
+            height: 15px;
+            background-color: $color--riptide;
+            transform: translateZ(-1px);
+    
+            @include media('medium') {
+                bottom: -5px;
+            }
+        }
+    }
+}

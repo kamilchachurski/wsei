@@ -1,0 +1,46 @@
+@import 'assets/styles/index.scss';
+
+.error {
+    min-height: 100vh;
+    background-color: $color--mirage;
+
+    .main {
+        &__container {
+            @extend %container--mobile;
+
+            padding-top: 50px;
+            padding-bottom: 50px;
+        
+            @include media('medium') {
+                width: 500px;
+            }
+        }
+
+        &__logo {
+            width: 120px;
+            margin-bottom: 30px;
+
+            @include media('medium') {
+                width: 200px;
+            }
+
+            @include media('large') {
+                width: 240px;
+            }
+        }
+
+        &__icon {
+            width: 120px;
+            margin-bottom: 30px;
+        }
+
+        &__description {
+            margin-top: 40px;
+            margin-bottom: 65px;
+
+            @include media('medium') {
+                margin-bottom: 140px;
+            }
+        }
+    }
+}

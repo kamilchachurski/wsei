@@ -1,0 +1,171 @@
+@import 'assets/styles/index.scss';
+
+.field {
+    max-width: 355px;
+    margin-bottom: 20px;
+
+    @include media('medium') {
+        max-width: none;
+    }
+
+    &:first-of-type {
+        margin-top: 30px;
+
+        @include media('medium') {
+            margin-top: 35px;
+        }
+    }
+
+    &:last-of-type {
+        margin-bottom: 30px;
+    }
+
+    &__checkbox {
+        .checkbox {
+            &__label {
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+            }
+    
+            &__input {
+                display: none;
+    
+                &:checked ~ .checkbox__ballot-box {
+                    outline: 1px solid $color--riptide;
+                    background-color: $color--riptide;
+                }
+            }
+    
+            &__ballot-box {
+                flex-shrink: 0;
+                width: 12px;
+                height: 12px;
+                border: 2px solid $color--mirage;
+                outline: 1px solid $color--white;
+                margin-right: 10px;
+
+                @include media('very-small') {
+                    margin-right: 20px;
+                }
+            }
+
+            &__toggle {
+                @extend %font--accent;
+
+                display: inline-block;
+            }
+
+            &__explanation {
+                @extend %font--annotation;
+                
+                margin-top: 5px;
+
+                @include media('very-small') {
+                    text-align: justify;
+                }
+            }
+        }
+
+        &--error {
+            @extend .field__checkbox;
+
+            .checkbox {
+                &__label {
+                    color: $color--geraldine;
+                }
+
+                &__ballot-box {
+                    outline-color: $color--geraldine;
+                }
+            }
+        }
+    }
+
+    &__common {
+        position: relative;
+
+        .common {
+            &__input {
+                @extend %font--secondary;
+                
+                box-sizing: border-box;
+                width: 100%;
+                height: 50px;
+                padding: 15px 61px 15px 20px;
+                border: 1px solid $color--white;
+                border-radius: .2rem;
+                font-size: 1.2rem;
+
+                @include media('medium') {
+                    height: 52px;
+                }
+
+                @include media('large') {
+                    font-size: 1rem;
+                }
+        
+                &:focus ~ .common__label,
+                &:not([value='']) ~ .common__label {
+                    @extend %font--annotation;
+
+                    top: -7px;
+                    color: $color--white;
+                    font-size: 1rem;
+
+                    @include media('medium') {
+                        top: -8px;
+                    }
+                }
+            }
+
+            &__label {
+                position: absolute;
+                top: 17px;
+                left: 16px;
+                padding-right: 5px;
+                padding-left: 5px;
+                cursor: text;
+                background-color: $color--mirage;
+                color: $color--white;
+                font-size: 1.2rem;
+                transition: top .2s, color .2s, font-size .2s;
+
+                @include media('medium') {
+                    top: 16px;
+                }
+
+                @include media('large') {
+                    top: 17px;
+                    font-size: 1rem;
+                }
+            }
+        }
+
+        &--error {
+            @extend .field__common;
+
+            .common {
+                &__input {
+                    border-color: $color--geraldine;
+
+                    &:focus ~ .common__label,
+                    &:not([value='']) ~ .common__label {
+                        color: $color--geraldine;
+                    }
+                }
+
+                &__label {
+                    color: $color--geraldine;
+                }
+            }
+        }
+    }
+
+    &__error {
+        @extend %font--annotation;
+
+        margin-top: 5px;
+        color: $color--geraldine;
+    }
+}

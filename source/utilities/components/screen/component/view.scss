@@ -1,0 +1,36 @@
+@import 'assets/styles/index.scss';
+
+.main {
+    @extend %container--desktop;
+
+    display: flex;
+    flex-direction: column-reverse;
+
+    @include media('medium') {
+        flex-direction: row;
+    }
+
+    &__container {
+        @extend %container--mobile;
+
+        padding-top: 30px;
+        padding-bottom: 30px;
+
+        @include media('medium') {
+            padding: 50px 20px;
+            background-color: $color--mirage;
+        }
+
+        @include media('large') {
+            padding: 50px;
+        }
+
+        @include media('very-large') {
+            padding: 50px 75px;
+        }
+
+        @include media('wide') {
+            padding: 50px 240px 50px 100px;
+        }
+    }
+}

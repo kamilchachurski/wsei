@@ -1,0 +1,20 @@
+@import 'assets/styles/index.scss';
+
+.footer {
+    @extend %font--annotation;
+    
+    padding-top: 20px;
+    border-top: 1px solid $color--ebony;
+    color: $color--white;
+    text-align: center;
+
+    @include media('medium') {
+        text-align: left;
+    }
+
+    &__contact {
+        @extend %font--secondary;
+
+        color: $color--riptide;
+    }
+}

@@ -1,0 +1,53 @@
+{
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "ecmaVersion": 2020,
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "sourceType": "module"
+    },
+    "env": {
+        "browser": true,
+        "node": true,
+        "es2020": true
+    },
+    "plugins": ["react"],
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+    },
+    "extends": ["airbnb", "airbnb/hooks"],
+    "rules": {
+        "comma-dangle": ["error", "never"],
+        "eol-last": ["error", "never"],
+        "import/no-unresolved": "off",
+        "import/order": "off",
+        "import/prefer-default-export": "off",
+        "indent": ["error", 4, {
+            "SwitchCase": 1
+        }],
+        "max-len": "off",
+        "no-mixed-operators": "off",
+        "no-nested-ternary": "off",
+        "no-lonely-if": "off",
+        "no-unused-expressions": ["error", {
+            "allowShortCircuit": true
+        }],
+        "react-hooks/exhaustive-deps": "off",
+        "react/jsx-curly-spacing": ["error", "always", {
+            "allowMultiline": true,
+            "spacing": {
+                "objectLiterals": "never"
+            }
+        }],
+        "react/jsx-indent": ["error", 4, {
+            "checkAttributes": true,
+            "indentLogicalExpressions": true
+        }],
+        "react/jsx-indent-props": ["error", 4],
+        "react/jsx-props-no-spreading": "off",
+        "template-curly-spacing": ["error", "always"]
+    }
+}
